@@ -337,13 +337,16 @@ main {
   position: absolute;
   inset: 0;
   z-index: 0;
+  /* Letterboxing when photos are not square — keeps full instrument in frame */
+  background: radial-gradient(ellipse 85% 75% at 50% 45%, rgba(42, 42, 52, 0.55) 0%, rgba(18, 18, 22, 0.98) 100%);
 }
 
 .instrument-tile__bg img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transform: scale(1.04);
+  object-fit: contain;
+  object-position: center;
+  transform: none;
   opacity: 1;
   filter: grayscale(0.35) contrast(1.05) brightness(0.95);
   transition:
@@ -355,7 +358,7 @@ main {
 .instrument-tile:hover .instrument-tile__bg img,
 .instrument-tile:focus-visible .instrument-tile__bg img {
   opacity: 0.2;
-  transform: scale(1.12);
+  transform: scale(1.03);
   filter: grayscale(0.5) contrast(1.02) brightness(1.05);
 }
 
@@ -564,7 +567,7 @@ main {
 
   .instrument-tile__bg img {
     opacity: 0.22;
-    transform: scale(1.1);
+    transform: scale(1.02);
   }
 
   .instrument-tile__scrim {
