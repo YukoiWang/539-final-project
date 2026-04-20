@@ -446,13 +446,14 @@ main {
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
   color: var(--gray-50);
-  font-size: clamp(1.12rem, 2.35vw, 1.45rem);
+  font-size: clamp(0.98rem, 1.65vw + 0.55rem, 1.22rem);
   font-weight: 400;
   line-height: 1.88;
   letter-spacing: 0.01em;
   box-shadow: none;
   text-align: left;
-  white-space: pre-line;
+  /* Collapse blank lines so paragraphs don't create extra gaps. */
+  white-space: normal;
   text-shadow:
     0 0 2px rgba(0, 0, 0, 0.95),
     0 1px 4px rgba(0, 0, 0, 0.9),
